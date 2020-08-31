@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "4ffb0312-c04e-4419-9424-f64b5417658f",
+		"name": "Kaffa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TODO",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/todo\n",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo\n"
+							]
+						},
+						"description": "Retorna todos os TODOS existentes na base de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"mercado\",\n\t\"content\": \"arroz feijao salada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo"
+							]
+						},
+						"description": "Cria novo TODO e persiste na base de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/todo/5f45a36acc61ab72cf6cd314",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"5f45a36acc61ab72cf6cd314"
+							]
+						},
+						"description": "Retorna TODO a partir do ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/todo/5f45a3db1174c1735844182a",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"5f45a3db1174c1735844182a"
+							]
+						},
+						"description": "Delete um TODO do banco de  dados a partir do seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"teste update\",\n\t\"content\": \"trabalho matematica / estudar prova ingles\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/todo/5f456d65b901894640401c28",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"todo",
+								"5f456d65b901894640401c28"
+							]
+						},
+						"description": "Atualiza um TODO no banco de dados a partir do seu id."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "WorldClock",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hour/client",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hour",
+								"client"
+							]
+						},
+						"description": "Obtêm a hora via chamada rest para a API World Clock."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hour Server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hour/server",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hour",
+								"server"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CNPJ",
+			"item": [
+				{
+					"name": "Valid Mask",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "CNPJ",
+								"value": "12.345.678/9012-34",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cnpj\": \"12345678912345     \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/cnpj/mask/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cnpj",
+								"mask",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid Digits",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cnpj\": \"36.386.939/0001-83\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/cnpj/digits",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cnpj",
+								"digits"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rectangle",
+			"item": [
+				{
+					"name": "Get Intersection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"points\": [\n\t\t{\n\t\t\t\"coordinates\": [\n\t\t\t\t\"x1\": 1,\n\t\t\t\t\"y1\": 3,\n\t\t\t\t\"x2\": 4,\n\t\t\t\t\"y2\": 6\n\t\t\t]\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/rectangle/intersection",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rectangle",
+								"intersection"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
